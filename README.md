@@ -31,7 +31,7 @@ El análisis genera los siguientes entregables exportados en la carpeta `salidas
 | Consulta y sugerencia | Qué se aceptó o cambió | Comprobación y resultado |
 | :--- | :--- | :--- |
 |No entendía cómo la función consultar_meteo (T4) conectaba con Open-Meteo. Consulté a la IA y me explicó el uso de requests.get() y cómo transformar el JSON a DataFrame.|Acepté el código sugerido (pd.DataFrame(contenido['daily'])) y comprendí que debía llamar a la función para ejecutarla.|Ejecuté la celda y obtuve un código de estado 200, confirmando que la conexión y descarga del DataFrame funcionaban.|
-|Tenía dificultades para entender el bucle que consultaba la API por ciudad y cómo consolidaba los datos. La IA me explicó el uso de .append() y pd.concat().No cambié código, pero acepté la explicación lógica de que pd.concat(..., ignore_index=True) apila las 3 tablas individuales en una sola.|Al ejecutar la celda y hacer print(meteo.shape), comprobé que la tabla final tenía 42 filas (3 ciudades x 14 días), validando la explicación.|
+|Tenía dificultades para entender el bucle que consultaba la API por ciudad y cómo consolidaba los datos. La IA me explicó el uso de .append() y pd.concat().|No cambié código, pero acepté la explicación lógica de que pd.concat(..., ignore_index=True) apila las 3 tablas individuales en una sola.|Al ejecutar la celda y hacer print(meteo.shape), comprobé que la tabla final tenía 42 filas (3 ciudades x 14 días), validando la explicación.|
 
 ---
 **Autores:** Iván Pérez y Carlos Baena
