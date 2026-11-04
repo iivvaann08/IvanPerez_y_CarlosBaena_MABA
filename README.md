@@ -28,10 +28,10 @@ El análisis genera los siguientes entregables exportados en la carpeta `salidas
 
 ## 🤖 Decisiones de Revisión con IA
 
-| Decisión | Consulta y sugerencia | Qué se aceptó o cambió | Comprobación y resultado |
-| :--- | :--- | :--- | :--- |
-| **1. Validación de Uniones (Merge)** | Se consultó sobre la propuesta de unir la meteorología únicamente por la columna `ciudad`. La IA advirtió que esto generaba un producto cartesiano (multiplicación de filas), duplicando las sesiones por cada uno de los 14 días. | Se rechazó la sugerencia de unión simple y se implementó la unión compuesta por `['ciudad', 'fecha']`. | La comprobación de filas final mantuvo estrictamente las 504 sesiones originales sin duplicaciones indeseadas. |
-| **2. Clasificación de ocupación eficiente** | Se solicitó una alternativa optimizada para clasificar los niveles de ocupación de forma vectorizada en pandas. | Se evaluó el uso de `pd.cut` frente a `.apply()`. Finalmente se optó por mantener la legibilidad de `.apply(clasificar_ocupacion)` por fines didácticos. | Se verificó visualmente en la cabecera que los umbrales de clasificación (Baja, Media, Alta) se asignaron correctamente. |
+| Consulta y sugerencia | Qué se aceptó o cambió | Comprobación y resultado |
+| :--- | :--- | :--- |
+|No entendía cómo la función consultar_meteo (T4) conectaba con Open-Meteo. Consulté a la IA y me explicó el uso de requests.get() y cómo transformar el JSON a DataFrame.|Acepté el código sugerido (pd.DataFrame(contenido['daily'])) y comprendí que debía llamar a la función para ejecutarla.|Ejecuté la celda y obtuve un código de estado 200, confirmando que la conexión y descarga del DataFrame funcionaban.|
+|Tenía dificultades para entender el bucle que consultaba la API por ciudad y cómo consolidaba los datos. La IA me explicó el uso de .append() y pd.concat().No cambié código, pero acepté la explicación lógica de que pd.concat(..., ignore_index=True) apila las 3 tablas individuales en una sola.|Al ejecutar la celda y hacer print(meteo.shape), comprobé que la tabla final tenía 42 filas (3 ciudades x 14 días), validando la explicación.|
 
 ---
 **Autores:** Iván Pérez y Carlos Baena
